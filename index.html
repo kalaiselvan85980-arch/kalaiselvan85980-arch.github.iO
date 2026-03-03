@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Kalaiselvan A | Geospatial Researcher</title>
+<title>Kalaiselvan A | Computational Geospatial Researcher</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
 html {
@@ -11,21 +13,39 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #0b1220;
+  font-family: 'Inter', sans-serif;
+  background: radial-gradient(circle at 20% 30%, #1e293b, #0b1220 60%);
   color: white;
+}
+
+/* Animated glow */
+body::before {
+  content: "";
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(56,189,248,0.15), transparent 70%);
+  top: -200px;
+  right: -200px;
+  animation: float 6s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+@keyframes float {
+  from { transform: translateY(0px); }
+  to { transform: translateY(40px); }
 }
 
 /* Navbar */
 nav {
   position: fixed;
   width: 100%;
-  background: rgba(11,18,32,0.95);
-  padding: 20px 10%;
+  padding: 25px 10%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
+  background: rgba(11,18,32,0.7);
+  backdrop-filter: blur(10px);
+  z-index: 100;
 }
 
 nav a {
@@ -41,63 +61,74 @@ nav a:hover {
 
 /* Hero */
 header {
-  padding: 160px 10% 120px 10%;
+  padding: 180px 10% 120px 10%;
+  position: relative;
+  z-index: 1;
 }
 
 h1 {
-  font-size: 64px;
+  font-size: 68px;
+  font-weight: 800;
   margin-bottom: 20px;
 }
 
 .highlight {
-  color: #38bdf8;
+  background: linear-gradient(90deg, #38bdf8, #0ea5e9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .typing {
-  font-size: 26px;
+  font-size: 24px;
   color: #94a3b8;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 button {
-  background: #38bdf8;
+  background: linear-gradient(90deg, #38bdf8, #0ea5e9);
   border: none;
   padding: 15px 30px;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 16px;
   cursor: pointer;
+  color: white;
 }
 
 button:hover {
-  background: #0ea5e9;
+  opacity: 0.85;
 }
 
 /* Sections */
 section {
-  padding: 80px 10%;
+  padding: 100px 10%;
+  position: relative;
+  z-index: 1;
 }
 
 h2 {
-  font-size: 36px;
-  margin-bottom: 40px;
+  font-size: 38px;
+  margin-bottom: 50px;
+  font-weight: 600;
 }
 
 .card {
-  background: #162032;
-  padding: 30px;
-  border-radius: 14px;
-  margin-bottom: 25px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+  padding: 35px;
+  border-radius: 18px;
+  margin-bottom: 30px;
   transition: 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.08);
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  background: #1e293b;
+  transform: translateY(-6px);
+  border: 1px solid rgba(56,189,248,0.5);
 }
 
 footer {
   text-align: center;
-  padding: 40px;
+  padding: 60px;
   color: #64748b;
 }
 </style>
@@ -110,85 +141,65 @@ footer {
   <div>
     <a href="#about">About</a>
     <a href="#research">Research</a>
-    <a href="#publications">Publications</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
 
 <header>
-  <h1>Hi, I'm <span class="highlight">Kalaiselvan A</span></h1>
+  <h1>Kalaiselvan A</h1>
   <div class="typing" id="typing"></div>
-  <button onclick="window.location='#research'">View Research</button>
+  <button onclick="window.location='#research'">Explore Research</button>
 </header>
 
 <section id="about">
-  <h2>About Me</h2>
+  <h2>About</h2>
   <div class="card">
-    MSc Researcher specializing in flood susceptibility modelling, 
-    multi-DEM terrain uncertainty analysis, and large-scale remote sensing 
-    using Google Earth Engine. My work focuses on hydrological terrain 
-    modelling, flood validation strategies, and geospatial uncertainty mapping.
+    MSc Geospatial Researcher working on flood susceptibility modelling,
+    multi-DEM terrain uncertainty, and scalable Earth observation workflows
+    using Google Earth Engine. Focused on computational hydrology and
+    geospatial intelligence systems.
   </div>
 </section>
 
 <section id="research">
-  <h2>Research Projects</h2>
+  <h2>Research</h2>
 
   <div class="card">
-    <h3>Brahmaputra Flood Mapping</h3>
-    Sentinel-1 SAR flood extraction using multi-source agreement validation framework.
+    <h3>Brahmaputra Flood Intelligence</h3>
+    Sentinel-1 SAR flood extraction using multi-source agreement validation.
   </div>
 
   <div class="card">
-    <h3>Multi-DEM Flood Terrain Analysis</h3>
-    Agreement-disagreement mapping and 3D uncertainty visualization for flood-prone regions.
+    <h3>Multi-DEM Terrain Uncertainty</h3>
+    Agreement–disagreement mapping and 3D terrain reliability assessment.
   </div>
 
   <div class="card">
-    <h3>Drainage Density Modelling</h3>
-    30m resolution hydrological terrain analysis using DEM-based workflows.
+    <h3>Hydrological Terrain Modelling</h3>
+    Drainage density and watershed-scale flood susceptibility analysis.
   </div>
 
-</section>
-
-<section id="publications">
-  <h2>Publications</h2>
-  <div class="card">
-    (Add your upcoming MSc publications or conference papers here.)
-  </div>
 </section>
 
 <section id="contact">
   <h2>Contact</h2>
   <div class="card">
-    <strong>Email:</strong><br>
-    <a href="mailto:kalaiselvan85980@gmail.com" style="color:#38bdf8;">
-      kalaiselvan85980@gmail.com
-    </a>
-    <br><br>
-
-    <strong>LinkedIn:</strong><br>
-    <a href="https://www.linkedin.com/in/kalaiselvan-a-772397297" target="_blank" style="color:#38bdf8;">
-      linkedin.com/in/kalaiselvan-a-772397297
-    </a>
-    <br><br>
-
-    <button onclick="alert('Upload your CV PDF to repository and link it here')">
-      Download CV
-    </button>
+    📧 <a href="mailto:kalaiselvan85980@gmail.com" style="color:#38bdf8;">kalaiselvan85980@gmail.com</a><br><br>
+    🔗 <a href="https://www.linkedin.com/in/kalaiselvan-a-772397297" target="_blank" style="color:#38bdf8;">LinkedIn Profile</a><br><br>
+    🌐 <a href="https://github.com/kalaiselvan85980-arch" target="_blank" style="color:#38bdf8;">GitHub</a>
   </div>
 </section>
 
 <footer>
-  © 2026 Kalaiselvan A | Geospatial Research
+  © 2026 Kalaiselvan A | Computational Geospatial Research
 </footer>
 
 <script>
 const texts = [
-  "> Flood Risk Modelling",
-  "> Multi-DEM Uncertainty Analysis",
-  "> Google Earth Engine Workflows",
-  "> Hydrological Terrain Intelligence"
+  "Computational Geospatial Researcher",
+  "Flood Risk Modelling Specialist",
+  "Multi-DEM Uncertainty Analyst",
+  "Google Earth Engine Developer"
 ];
 
 let count = 0;
@@ -197,19 +208,14 @@ let currentText = '';
 let letter = '';
 
 (function type(){
-  if (count === texts.length) {
-    count = 0;
-  }
+  if (count === texts.length) count = 0;
   currentText = texts[count];
   letter = currentText.slice(0, ++index);
 
   document.getElementById('typing').textContent = letter;
 
   if(letter.length === currentText.length){
-    setTimeout(() => {
-      index = 0;
-      count++;
-    }, 1500);
+    setTimeout(() => { index = 0; count++; }, 1500);
   }
 
   setTimeout(type, 80);
